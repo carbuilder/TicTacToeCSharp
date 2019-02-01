@@ -16,5 +16,10 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
