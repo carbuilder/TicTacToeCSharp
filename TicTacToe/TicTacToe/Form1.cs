@@ -31,6 +31,10 @@ namespace TicTacToe
         {
             PictureBox p = sender as PictureBox;
 
+            // prevents image overright
+            if (p.Image != null)
+                return;
+
             if (turn == PlayerTurn.Player1)
                 p.Image = player1.Image;
             else
