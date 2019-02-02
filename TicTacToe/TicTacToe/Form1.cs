@@ -17,9 +17,10 @@ namespace TicTacToe
             InitializeComponent();
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void OnClick(object sender, EventArgs e)
         {
-
+            PictureBox p = sender as PictureBox;
+            p.Image = player1.Image;
         }
     }
 }
