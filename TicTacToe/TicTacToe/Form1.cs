@@ -18,6 +18,20 @@ namespace TicTacToe
 
         void OnNewGame()
         {
+            PictureBox[] allPictures = {pictureBox0,
+                                        pictureBox1,
+                                        pictureBox2,
+                                        pictureBox3,
+                                        pictureBox4,
+                                        pictureBox5,
+                                        pictureBox6,
+                                        pictureBox7,
+                                        pictureBox8};
+
+            // clear all game board cells
+            foreach (var p in allPictures)
+                p.Image = null;
+
             turn = PlayerTurn.Player1;
             ShowTurn();
         }
@@ -61,6 +75,16 @@ namespace TicTacToe
         private void Form1_Load(object sender, EventArgs e)
         {
             OnNewGame();
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to start a new game?",
+                                        "New Game",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                OnNewGame();
         }
     }
 }
