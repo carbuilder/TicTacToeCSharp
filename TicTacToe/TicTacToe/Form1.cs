@@ -19,7 +19,18 @@ namespace TicTacToe
         void OnNewGame()
         {
             turn = PlayerTurn.Player1;
-            lblStatus.Text = "";
+            ShowTurn();
+        }
+
+        void ShowTurn()
+        {
+            string status = "";
+            if (turn == PlayerTurn.Player1)
+                status = "Turn: Player 1";
+            else
+                status = "Turn: Player 2";
+
+            lblStatus.Text = status;
         }
 
         public Form1()
@@ -41,7 +52,10 @@ namespace TicTacToe
                 p.Image = player2.Image;
 
             // Change turns
-            turn = (PlayerTurn.Player1 == turn) ? PlayerTurn.Player2 : PlayerTurn.Player1;
+            turn = (PlayerTurn.Player1 == turn) ? 
+                PlayerTurn.Player2 : PlayerTurn.Player1;
+
+            ShowTurn();
         }
 
         private void Form1_Load(object sender, EventArgs e)
